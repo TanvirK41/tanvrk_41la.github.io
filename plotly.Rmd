@@ -14,10 +14,12 @@ library(p8105.datasets)
 library(plotly)
 ```
 
-# Loading 
+
+# Loading the data
 ```{r}
 data("ny_noaa") 
 ```
+
 
 ```{r}
 set.seed(1) #set fixed random samples
@@ -26,7 +28,8 @@ noaa_dfc =
   ny_noaa %>%
   sample_n(10000) %>%
   separate(col = date, into = c("year","month", "day")) %>%
-  mutate(across(.cols = c(year, month, day), as.integer)) %>%
+  mutate(across(.cols
+                = c(year, month, day), as.integer)) %>%
   mutate(month = month.name[month]) %>%
   mutate(prcp = prcp/10, 
          tmax = as.numeric(tmax)/10,
@@ -60,6 +63,7 @@ noaa_dfc %>%
 ```{r}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
+  mutate(month = fct_reorder(month, tmax)) %>%
   group_by(year, month, id) %>%
   summarize(mean_tmax = mean(tmax)) %>%
   plot_ly(x = ~ month, 
@@ -73,5 +77,19 @@ noaa_dfc %>%
     yaxis = list(title = "(Mean) Max Temperature (ºC)")) 
 ```
 
+
+## Ploty Violinplot 
+```{r}
+noaa_dfc %>%
+  filter(snow > 0 & snow < 100) %>% 
+  plot_ly(x = ~ year, 
+          y = ~ snow, 
+          split = ~ year, 
+          type = "violin",
+          box = list(visible = T, 
+          meanline = list(visible = T))) %>%
+  layout(xaxis = list(title = "Year (1981-2010)"),
+         yaxis = list(title = "Snowfall (mm)"))
+```
 
 
