@@ -11,6 +11,8 @@ navbar:
       href: Misc.html
     - text: "Ploty"
       href: plotly.html
+    - text: "Dashboard"
+      href: dashboard.html
     - icon: fa-envelope fa-lg
       href: mailto:<maverick.97tk@gmail.com>
     - icon: fa-github fa-lg

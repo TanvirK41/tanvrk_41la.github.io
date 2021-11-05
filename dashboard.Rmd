@@ -1,24 +1,19 @@
 ---
-title: Plots 
+title: "Dashboard"
 output: 
-  html_document:
-    toc: true
-    toc_float: true
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+    source: embed
 ---
 
-
-
-```{r message = FALSE, echo = FALSE}
+```{r setup, include=FALSE}
 library(tidyverse)
 library(p8105.datasets)
 library(plotly)
+library(flexdashboard)
 ```
 
-
-# Loading the data
-```{r message = FALSE, echo = FALSE}
-data("ny_noaa") 
-```
 
 
 ```{r message = FALSE, echo = FALSE}
@@ -34,16 +29,16 @@ noaa_dfc =
   mutate(prcp = prcp/10, 
          tmax = as.numeric(tmax)/10,
          tmin = as.numeric(tmin)/10) 
-noaa_dfc
 ```
 
 
 
+Column {data-width=650}
+-----------------------------------------------------------------------
 
+### Chart A
 
-## Plotly scatterplot
-### Maximum Temperature versus Minimum Temperature in 1997
-```{r message = FALSE}
+```{r}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
   filter(year == 1997) %>%
@@ -62,10 +57,12 @@ noaa_dfc %>%
          yaxis = list(title = "Maximum temperature (ºC) in 1997"))
 ```
 
+Column {data-width=350}
+-----------------------------------------------------------------------
 
-## Plotly Boxplot
-### Max Temperature (Average) in Each Station (1981 to 2010)
-```{r message = FALSE}
+### Chart B
+
+```{r}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
   mutate(month = fct_reorder(month, tmax)) %>%
@@ -77,14 +74,13 @@ noaa_dfc %>%
           colors = "viridis", 
           type = "box") %>%
   layout(
-    title = "Max Temperature (Average) in Each Station (1981 to 2010)", 
     xaxis = list(title = "Month"),
     yaxis = list(title = "(Mean) Max Temperature (ºC)")) 
 ```
 
+### Chart C
 
-## Plotly Violinplot 
-```{r message = FALSE}
+```{r}
 noaa_dfc %>%
   filter(snow > 0 & snow < 100) %>% 
   plot_ly(x = ~ year, 
@@ -96,5 +92,4 @@ noaa_dfc %>%
   layout(xaxis = list(title = "Year (1981-2010)"),
          yaxis = list(title = "Snowfall (mm)"))
 ```
-
 
