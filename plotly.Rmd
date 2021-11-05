@@ -35,7 +35,7 @@ noaa_dfc
 ```
 
 
-## Plotly scatterplot: Maximum Temperature versus Minimum Temperature in 1997 in NYC 
+## Plotly scatterplot: Maximum Temperature versus Minimum Temperature in 1997
 ```{r}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
@@ -49,9 +49,28 @@ noaa_dfc %>%
           mode = "markers",
           alpha = 0.5,
           color = ~ month,
+          colors = "viridis", 
           text = ~ text_label) %>%
   layout(xaxis = list(title = "Minimum temperature (ºC) in 1997"),
          yaxis = list(title = "Maximum temperature (ºC) in 1997"))
+```
+
+
+## Ploty Boxplot: Max Temperature (Average) in Each Station (1981 to 2010)
+```{r}
+noaa_dfc %>%
+  drop_na(tmin, tmax) %>%
+  group_by(year, month, id) %>%
+  summarize(mean_tmax = mean(tmax)) %>%
+  plot_ly(x = ~ month, 
+          y = ~ factor(mean_tmax), 
+          color = ~ month, 
+          colors = "viridis", 
+          type = "box") %>%
+  layout(
+    title = "Max Temperature (Average) in Each Station (1981 to 2010)", 
+    xaxis = list(title = "Month"),
+    yaxis = list(title = "(Mean) Max Temperature (ºC)")) 
 ```
 
 
