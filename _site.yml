@@ -5,7 +5,7 @@ navbar:
   right:
     - text: "About Me"
       href: about.html
-    - text: "Education Experience"
+    - text: "Education/Professional Experience"
       href: Education.html
     - text: "The World of Data Science"
       href: Misc.html
@@ -13,6 +13,8 @@ navbar:
       href: mailto:<maverick.97tk@gmail.com>
     - icon: fa-github fa-lg
       href: http://github.com/TanvirK41/
+    - icon: fa-linkedin fa-lg
+      href: https://www.linkedin.com/in/tanvir-k-559139133/
 output:
   html_document:
     theme: darkly
