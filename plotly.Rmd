@@ -16,12 +16,12 @@ library(plotly)
 
 
 # Loading the data
-```{r}
+```{r message = FALSE, echo = FALSE}
 data("ny_noaa") 
 ```
 
 
-```{r}
+```{r message = FALSE, echo = FALSE}
 set.seed(1) #set fixed random samples
 
 noaa_dfc = 
@@ -38,8 +38,9 @@ noaa_dfc
 ```
 
 
-## Plotly scatterplot: Maximum Temperature versus Minimum Temperature in 1997
-```{r}
+## Plotly scatterplot
+### Maximum Temperature versus Minimum Temperature in 1997
+```{r message = FALSE}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
   filter(year == 1997) %>%
@@ -59,8 +60,9 @@ noaa_dfc %>%
 ```
 
 
-## Ploty Boxplot: Max Temperature (Average) in Each Station (1981 to 2010)
-```{r}
+## Plotly Boxplot
+### Max Temperature (Average) in Each Station (1981 to 2010)
+```{r message = FALSE}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
   mutate(month = fct_reorder(month, tmax)) %>%
@@ -78,8 +80,8 @@ noaa_dfc %>%
 ```
 
 
-## Ploty Violinplot 
-```{r}
+## Plotly Violinplot 
+```{r message = FALSE}
 noaa_dfc %>%
   filter(snow > 0 & snow < 100) %>% 
   plot_ly(x = ~ year, 
