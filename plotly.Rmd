@@ -35,7 +35,7 @@ noaa_dfc
 ```
 
 
-## Plotly scatterplot: 
+## Plotly scatterplot: Maximum Temperature versus Minimum Temperature in 1997 in NYC 
 ```{r}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
