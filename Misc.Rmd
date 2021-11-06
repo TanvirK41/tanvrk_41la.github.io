@@ -1,5 +1,5 @@
 ---
-title: The World of Data Science 
+title: "The World of Data Science"
 output: 
   html_document:
     toc: true
@@ -12,6 +12,7 @@ output:
 library(tidyverse)
 ```
 
+### Example 1
 
 <center> __Look at how cool this plot is!__ <center>
 

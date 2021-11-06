@@ -2,8 +2,8 @@
 title: "Resume"
 output: 
   html_document:
-    toc: false
-    toc_float: false
+    toc: True
+    toc_float: True
 ---
 
 ### Education
@@ -32,3 +32,12 @@ UC Irvine Neuroscience <div style="text-align: right"> *Jun 2018 - Jun 2021* </d
 - Projects examine episodic and working memory roles in decisions for reward, perceptual inference, drug choice and addiction, and inter temporal choice, using computational model-driven analysis of behavior and brain activity (via fMRI, but with plans for EEG and other modalities)
 - Programming: MATLAB, R, Python
 
+
+
+
+### Work
+
+**UCI Math CEO Mentor**
+UC Irvine Math <div style="text-align: right"> *Jun 2018 - March 2020* </div>
+
+- Every week, middle-school students come to UCI to partake in mathematical workshops (I teach them learn new mathematical topics, help them understand mathematical concepts/games and puzzles).
