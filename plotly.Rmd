@@ -73,7 +73,7 @@ noaa_dfc %>%
 
 
 ### Plotly Boxplot
-#### Max Temperature (Average) in Each Station (1981 to 2010)
+#### Max Temperature (Average) Pattern for Each Month (1981-2010)
 ```{r message = FALSE}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%

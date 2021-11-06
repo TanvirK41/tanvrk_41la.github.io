@@ -1,5 +1,5 @@
 ---
-title: <center> Welcome to Tanvir's World
+title: "Welcome to Tanvir's World"
 output: 
   html_document:
     toc: False
