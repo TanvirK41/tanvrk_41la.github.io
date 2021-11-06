@@ -30,7 +30,8 @@ set.seed(12345)
 noaa_dfc = 
   ny_noaa %>%
   sample_n(10000) %>%
-  separate(col = date, into = c("year","month", "day")) %>%
+  separate(col = date, 
+           into = c("year","month", "day")) %>%
   mutate(across(.cols
                 = c(year, month, day), as.integer)) %>%
   mutate(month = month.name[month]) %>%
@@ -49,7 +50,8 @@ noaa_dfc =
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
   filter(year == 1997) %>%
-  mutate(text_label = str_c("Max Temperature: ", tmax, 
+  mutate(text_label = 
+           str_c("Max Temperature: ", tmax, 
                             "\nMin Temperature: ", tmin, 
                             "\nDate: ", month,"-",day,"-",year)) %>%
   plot_ly(x = ~ tmin, 
@@ -60,8 +62,10 @@ noaa_dfc %>%
           color = ~ month,
           colors = "viridis", 
           text = ~ text_label) %>%
-  layout(xaxis = list(title = "Minimum temperature (ºC) in 1997"),
-         yaxis = list(title = "Maximum temperature (ºC) in 1997"))
+  layout(xaxis = list(title = 
+                        "Minimum temperature (ºC) in 1997"),
+         yaxis = list(title = 
+                        "Maximum temperature (ºC) in 1997"))
 ```
 
 
@@ -70,7 +74,8 @@ noaa_dfc %>%
 ```{r message = FALSE}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
-  mutate(month = fct_reorder(month, tmax)) %>%
+  mutate(month = 
+           fct_reorder(month, tmax)) %>%
   group_by(year, month, id) %>%
   summarize(mean_tmax = mean(tmax)) %>%
   plot_ly(x = ~ month, 
@@ -79,9 +84,12 @@ noaa_dfc %>%
           colors = "viridis", 
           type = "box") %>%
   layout(
-    title = "Max Temperature (Average) in Each Station (1981 to 2010)",
-    xaxis = list(title = "Month"),
-    yaxis = list(title = "(Mean) Max Temperature (ºC)")) 
+    title = 
+      "Max Temperature (Average) in Each Station (1981 to 2010)",
+    xaxis = list(title = 
+                   "Month"),
+    yaxis = list(title = 
+                   "(Mean) Max Temperature (ºC)")) 
 ```
 
 
