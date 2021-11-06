@@ -70,7 +70,7 @@ noaa_dfc %>%
            list(title = 
                   "Maximum temperature (ºC) in 1997"))
 ```
-
+Analysis of Scatterplot: Based on our scatterplot, the 2nd of August of 1997 had the warmest temperature, while the 18th of January of 1997 had the coldest temperature. 
 
 ### Plotly Boxplot
 #### Max Temperature (Average) Pattern for Each Month (1981-2010)
@@ -96,7 +96,7 @@ noaa_dfc %>%
       list(title = 
              "(Mean) Max Temperature (ºC)")) 
 ```
-
+Analysis of Boxplot: Based on our boxplots, from 1981 to 2010 the month of July on average had the warmest temperatures compared to the other 11 months. 
 
 ### Plotly Violinplot 
 #### Distribution of snow fall between 1997 to 2010
