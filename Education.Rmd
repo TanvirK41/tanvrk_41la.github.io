@@ -33,6 +33,11 @@ UC Irvine Neuroscience <div style="text-align: right"> *Jun 2018 - Jun 2021* </d
 - Programming: MATLAB, R, Python
 
 
+**Physics Research Intern – Magnetic Linear Accelerator**
+Keck Medicine of USC <div style="text-align: right"> *April 2014 - August 2016* </div>
+
+- Created magnetic linear accelerator, Gauss Rifle to study kinetic energy, momentum, velocity, compare to real gun
+- Awarded Second Place at the USC Keck Science and engineering fair in the field of Physics
 
 
 ### Work
@@ -41,3 +46,10 @@ UC Irvine Neuroscience <div style="text-align: right"> *Jun 2018 - Jun 2021* </d
 UC Irvine Math <div style="text-align: right"> *Jun 2018 - March 2020* </div>
 
 - Every week, middle-school students come to UCI to partake in mathematical workshops (I teach them learn new mathematical topics, help them understand mathematical concepts/games and puzzles).
+
+
+
+<br>
+<center>
+
+Click here to return to the [Home](index.html) page.

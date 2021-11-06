@@ -1,10 +1,10 @@
 ---
-title: <center> Plots </center>
+title: "Plots"
 output: 
   html_document:
     code_folding: hide
     toc: true
-    toc_depth: 3
+    toc_depth: 4
     toc_float: true
 ---
 
@@ -22,9 +22,10 @@ library(plotly)
 data("ny_noaa") 
 ```
 
-
-```{r message = FALSE, echo = FALSE}
-set.seed(1) #set fixed random samples
+### Loading Data "ny_noaa"
+#### Data were accessed from the NOAA National Climatic Data Center
+```{r message = FALSE}
+set.seed(1234) 
 
 noaa_dfc = 
   ny_noaa %>%
@@ -78,16 +79,17 @@ noaa_dfc %>%
           colors = "viridis", 
           type = "box") %>%
   layout(
-    title = "Max Temperature (Average) in Each Station (1981 to 2010)", 
+    title = "Max Temperature (Average) in Each Station (1981 to 2010)",
     xaxis = list(title = "Month"),
     yaxis = list(title = "(Mean) Max Temperature (ºC)")) 
 ```
 
 
 ### Plotly Violinplot 
+#### 
 ```{r message = FALSE}
 noaa_dfc %>%
-  filter(snow > 0 & snow < 100) %>% 
+  filter(snow > 0 & snow < 200) %>% 
   plot_ly(x = ~ year, 
           y = ~ snow, 
           split = ~ year, 
@@ -99,3 +101,6 @@ noaa_dfc %>%
 ```
 
 
+
+
+Click here to return to the [Home](index.html) page.

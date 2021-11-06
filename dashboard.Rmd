@@ -93,3 +93,8 @@ noaa_dfc %>%
          yaxis = list(title = "Snowfall (mm)"))
 ```
 
+
+
+
+
+Click here to return to the [Home](index.html) page.
