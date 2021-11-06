@@ -1,11 +1,34 @@
 ---
-title: "Education/Professional Experience"
+title: "Resume"
 output: 
   html_document:
-    toc: true
-    toc_float: true
+    toc: false
+    toc_float: false
 ---
 
+### Education
 
-#UCI
-#COLUMBIA UNI
+**Columbia University** <div style="text-align: right"> *New York, NY* </div>
+
+Master of Science (M.S.) Biostatistics
+
+- Theory and Methods Track
+- Expected Graduation: Spring 2023 (May)
+
+**UC Irvine** <div style="text-align: right"> *Irvine, CA* </div>
+
+Bachelor of Science (B.S.) Computer Science and Engineering  
+
+- Graduated: Spring 2020
+
+
+
+
+### Research
+
+**Computational Biology/Neuroscience Research Intern**
+UC Irvine Neuroscience <div style="text-align: right"> *Jun 2018 - Jun 2021* </div>
+
+- Projects examine episodic and working memory roles in decisions for reward, perceptual inference, drug choice and addiction, and inter temporal choice, using computational model-driven analysis of behavior and brain activity (via fMRI, but with plans for EEG and other modalities)
+- Programming: MATLAB, R, Python
+

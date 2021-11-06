@@ -1,8 +1,10 @@
 ---
-title: Plots 
+title: <center> Plots </center>
 output: 
   html_document:
+    code_folding: hide
     toc: true
+    toc_depth: 3
     toc_float: true
 ---
 
@@ -15,7 +17,7 @@ library(plotly)
 ```
 
 
-# Loading the data
+
 ```{r message = FALSE, echo = FALSE}
 data("ny_noaa") 
 ```
@@ -40,8 +42,8 @@ noaa_dfc =
 
 
 
-## Plotly scatterplot
-### Maximum Temperature versus Minimum Temperature in 1997
+### Plotly scatterplot
+#### Maximum Temperature vs. Minimum Temperature in 1997
 ```{r message = FALSE}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
@@ -62,8 +64,8 @@ noaa_dfc %>%
 ```
 
 
-## Plotly Boxplot
-### Max Temperature (Average) in Each Station (1981 to 2010)
+### Plotly Boxplot
+#### Max Temperature (Average) in Each Station (1981 to 2010)
 ```{r message = FALSE}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
@@ -82,7 +84,7 @@ noaa_dfc %>%
 ```
 
 
-## Plotly Violinplot 
+### Plotly Violinplot 
 ```{r message = FALSE}
 noaa_dfc %>%
   filter(snow > 0 & snow < 100) %>% 

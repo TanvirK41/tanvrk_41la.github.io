@@ -1,9 +1,22 @@
 ---
-title: "About Me"
+title: <center> About Me
 output: 
   html_document:
-    toc: true
-    toc_float: true
+    toc: false
+    toc_float: false
 ---
 
-# Information about Tanvir Khan 
+<center> <img src="Biostatistics.jpg" style="width:75%"> </center>
+
+
+<br>
+<center>
+
+I am currently attending Columbia University for my Master of Science in Biostatistics, Track: Theory and Methods.
+
+I recently graduated from University of California, Irvine (UCI) with a Bachelor of Science in Computer Science and Engineering. 
+
+I am actively looking for a 2022 summer internship within the biostatistics and data science field.
+
+
+<center> <img src="AI.jpg" style="width:75%"> </center>
