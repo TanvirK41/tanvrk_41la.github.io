@@ -125,7 +125,7 @@ noaa_dfc %>%
            list(title = 
                   "Snowfall (mm)"))
 ```
-Analysis of Violinplot: 2008, 2009, 2010 had the three highest snowfall(mm) all over 180mm. 
+Analysis of Violinplot: 2008, 2009, 2010 had the three most snowfall(mm) all over 180mm. 
 
 
 
