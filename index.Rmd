@@ -14,3 +14,9 @@ Thank you for stopping by!
 
 My name is Tanvir Khan and this is my personal website.
 
+<center> <img src="AI.jpg" style="width:75%"> </center>
+
+
+Contact Information:
+
+Email: k.tanvir@columbia.edu

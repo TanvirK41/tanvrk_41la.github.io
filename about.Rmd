@@ -16,7 +16,6 @@ I am currently attending Columbia University for my Master of Science in Biostat
 
 I recently graduated from University of California, Irvine (UCI) with a Bachelor of Science in Computer Science and Engineering. 
 
+<center> <img src="UCI.jpg" style="width:75%"> </center>
+
 I am actively looking for a 2022 summer internship within the biostatistics and data science field.
-
-
-<center> <img src="AI.jpg" style="width:75%"> </center>
