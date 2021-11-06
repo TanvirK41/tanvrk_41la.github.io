@@ -53,8 +53,14 @@ noaa_dfc %>%
           color = ~ month,
           colors = "viridis", 
           text = ~ text_label) %>%
-  layout(xaxis = list(title = "Minimum temperature (ºC) in 1997"),
-         yaxis = list(title = "Maximum temperature (ºC) in 1997"))
+  layout(title = 
+           "Minimum Temperature vs. Maximum Temperature in 1997",
+         xaxis = 
+           list(title = 
+                  "Minimum temperature (ºC) in 1997"),
+         yaxis = 
+           list(title = 
+                  "Maximum temperature (ºC) in 1997"))
 ```
 
 Column {data-width=550}
@@ -65,7 +71,8 @@ Column {data-width=550}
 ```{r}
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
-  mutate(month = fct_reorder(month, tmax)) %>%
+  mutate(month = 
+           fct_reorder(month, tmax)) %>%
   group_by(year, month, id) %>%
   summarize(mean_tmax = mean(tmax)) %>%
   plot_ly(x = ~ month, 
@@ -74,23 +81,36 @@ noaa_dfc %>%
           colors = "viridis", 
           type = "box") %>%
   layout(
-    xaxis = list(title = "Month"),
-    yaxis = list(title = "(Mean) Max Temperature (ºC)")) 
+    title = 
+      "Max Temperature (Average) Pattern for Each Month (1981-2010)", 
+    xaxis = 
+      list(title = 
+             "Month"),
+    yaxis = 
+      list(title = 
+             "(Mean) Max Temperature (ºC)")) 
 ```
 
 ### Chart C
 
 ```{r}
 noaa_dfc %>%
-  filter(snow > 0 & snow < 200) %>% 
+  filter(snow > 0 & snow < 200,
+         year > 1996 & year <= 2010) %>% 
   plot_ly(x = ~ year, 
           y = ~ snow, 
           split = ~ year, 
           type = "violin",
           box = list(visible = T, 
           meanline = list(visible = T))) %>%
-  layout(xaxis = list(title = "Year (1981-2010)"),
-         yaxis = list(title = "Snowfall (mm)"))
+  layout(title = 
+           "Snowfall Distribution (1997-2010)",
+         xaxis = 
+           list(title = 
+                  "Year (1997-2010)"),
+         yaxis = 
+           list(title = 
+                  "Snowfall (mm)"))
 ```
 
 

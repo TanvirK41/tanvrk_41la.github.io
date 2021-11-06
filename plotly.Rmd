@@ -50,8 +50,7 @@ noaa_dfc =
 noaa_dfc %>%
   drop_na(tmin, tmax) %>%
   filter(year == 1997) %>%
-  mutate(text_label = 
-           str_c("Max Temperature: ", tmax, 
+  mutate(text_label = str_c("Max Temperature: ", tmax, 
                             "\nMin Temperature: ", tmin, 
                             "\nDate: ", month,"-",day,"-",year)) %>%
   plot_ly(x = ~ tmin, 
@@ -62,10 +61,14 @@ noaa_dfc %>%
           color = ~ month,
           colors = "viridis", 
           text = ~ text_label) %>%
-  layout(xaxis = list(title = 
-                        "Minimum temperature (ºC) in 1997"),
-         yaxis = list(title = 
-                        "Maximum temperature (ºC) in 1997"))
+  layout(title = 
+           "Minimum Temperature vs. Maximum Temperature in 1997",
+         xaxis = 
+           list(title = 
+                  "Minimum temperature (ºC) in 1997"),
+         yaxis = 
+           list(title = 
+                  "Maximum temperature (ºC) in 1997"))
 ```
 
 
@@ -85,27 +88,36 @@ noaa_dfc %>%
           type = "box") %>%
   layout(
     title = 
-      "Max Temperature (Average) in Each Station (1981 to 2010)",
-    xaxis = list(title = 
-                   "Month"),
-    yaxis = list(title = 
-                   "(Mean) Max Temperature (ºC)")) 
+      "Max Temperature (Average) Pattern for Each Month (1981-2010)", 
+    xaxis = 
+      list(title = 
+             "Month"),
+    yaxis = 
+      list(title = 
+             "(Mean) Max Temperature (ºC)")) 
 ```
 
 
 ### Plotly Violinplot 
-#### 
+#### Distribution of snow fall between 1997 to 2010
 ```{r message = FALSE}
 noaa_dfc %>%
-  filter(snow > 0 & snow < 200) %>% 
+  filter(snow > 0 & snow < 200,
+         year > 1996 & year <= 2010) %>% 
   plot_ly(x = ~ year, 
           y = ~ snow, 
           split = ~ year, 
           type = "violin",
           box = list(visible = T, 
           meanline = list(visible = T))) %>%
-  layout(xaxis = list(title = "Year (1981-2010)"),
-         yaxis = list(title = "Snowfall (mm)"))
+  layout(title = 
+           "Snowfall Distribution (1997-2010)",
+         xaxis = 
+           list(title = 
+                  "Year (1997-2010)"),
+         yaxis = 
+           list(title = 
+                  "Snowfall (mm)"))
 ```
 
 
