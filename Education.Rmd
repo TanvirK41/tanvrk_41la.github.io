@@ -1,9 +1,9 @@
 ---
-title: "Resume"
+title: "Academic Career"
 output: 
   html_document:
-    toc: True
-    toc_float: True
+    toc: false
+    toc_float: false
 ---
 
 ### Education

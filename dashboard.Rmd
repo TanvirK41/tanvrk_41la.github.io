@@ -17,7 +17,7 @@ library(flexdashboard)
 
 
 ```{r message = FALSE, echo = FALSE}
-set.seed(1) #set fixed random samples
+set.seed(12345) #set fixed random samples
 
 noaa_dfc = 
   ny_noaa %>%
@@ -33,7 +33,7 @@ noaa_dfc =
 
 
 
-Column {data-width=650}
+Column {data-width=450}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -57,7 +57,7 @@ noaa_dfc %>%
          yaxis = list(title = "Maximum temperature (ºC) in 1997"))
 ```
 
-Column {data-width=350}
+Column {data-width=550}
 -----------------------------------------------------------------------
 
 ### Chart B
@@ -82,7 +82,7 @@ noaa_dfc %>%
 
 ```{r}
 noaa_dfc %>%
-  filter(snow > 0 & snow < 100) %>% 
+  filter(snow > 0 & snow < 200) %>% 
   plot_ly(x = ~ year, 
           y = ~ snow, 
           split = ~ year, 
