@@ -115,6 +115,7 @@ noaa_dfc %>%
 
 
 ### Chart D
+
 ```{r}
 noaa_dfc %>%
   filter(snow > 0,
