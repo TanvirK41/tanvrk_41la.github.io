@@ -11,7 +11,7 @@
 
 
 
-<title>The World of Data Science</title>
+<title>Trying new things with R code</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -33,6 +33,7 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
@@ -221,6 +222,9 @@ $(document).ready(function () {
 </style>
 
 <!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
 
 
 
@@ -363,9 +367,17 @@ div.tocify {
 
 <div id="header">
 
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-show-all-code" href="#">Show All Code</a></li>
+<li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li>
+</ul>
+</div>
 
 
-<h1 class="title toc-ignore">The World of Data Science</h1>
+
+<h1 class="title toc-ignore">Trying new things with R code</h1>
 
 </div>
 
@@ -376,7 +388,34 @@ div.tocify {
 <strong>Look at how cool this plot is!</strong>
 <center>
 <p><span class="math display">\[Y = \alpha \cdot \sin(X), \alpha = 0,0.1,0.2,...,3\]</span></p>
-<p><img src="Misc_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>cool_function &lt;- function(x, alpha) return(sin(alpha*x))
+
+xs &lt;- seq(0, pi*1.5, 0.005)
+
+ys &lt;- cool_function(xs, 1)
+
+results &lt;- data_frame(xs, ys, alpha = &quot;1&quot;)
+
+for (alpha in seq(0, 3, 0.1)) {
+  results &lt;- results %&gt;% 
+    bind_rows(
+      data_frame(
+      xs, 
+      ys = cool_function(xs, alpha),
+      alpha = as.character(alpha)
+    ))
+}
+
+
+ggplot(results, 
+       aes(x = xs, 
+           y = ys, 
+           color = alpha)) + 
+  geom_line() + 
+  theme_bw() + 
+  theme(
+    legend.position = &quot;none&quot;)</code></pre>
+<p><img src="Misc_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>Click here to return to the <a href="index.html">Home</a> page.</p>
 </div>
 
@@ -415,6 +454,11 @@ $(document).ready(function () {
 </script>
 
 <!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("hide" === "show");
+});
+</script>
 
 <script>
 $(document).ready(function ()  {

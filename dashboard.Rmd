@@ -33,7 +33,7 @@ noaa_dfc =
 
 
 
-Column {data-width=450}
+Column {data-width=400}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -63,7 +63,7 @@ noaa_dfc %>%
                   "Maximum temperature (ºC) in 1997"))
 ```
 
-Column {data-width=550}
+Column {data-width=600}
 -----------------------------------------------------------------------
 
 ### Chart B
@@ -114,7 +114,29 @@ noaa_dfc %>%
 ```
 
 
-
-
+### Chart D
+```{r}
+noaa_dfc %>%
+  filter(snow > 0,
+         year == 1997) %>%
+  mutate(month = 
+           fct_reorder(month, snow)) %>%
+  group_by(month) %>%
+  summarize(mean_snow 
+            = mean(snow))  %>%
+  plot_ly(x = ~ month, 
+          y = ~ mean_snow, 
+          color = ~ month, 
+          colors = "viridis", 
+          type = "bar") %>%
+   layout(title = 
+           "Average Snowfall for Months in 1997",
+         xaxis = 
+           list(title = 
+                  "Month"),
+         yaxis = 
+           list(title = 
+                  "Mean Snowfall (mm)"))
+```
 
 

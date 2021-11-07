@@ -1,7 +1,8 @@
 ---
-title: "The World of Data Science"
+title: "Trying new things with R code"
 output: 
   html_document:
+    code_folding: hide
     toc: true
     toc_float: true
 ---
@@ -18,7 +19,7 @@ library(tidyverse)
 
 $$Y = \alpha \cdot \sin(X), \alpha = 0,0.1,0.2,...,3$$
 
-```{r, echo = FALSE, warning = FALSE, message = FALSE, fig.align='center'}
+```{r, warning = FALSE}
 
 cool_function <- function(x, alpha) return(sin(alpha*x))
 

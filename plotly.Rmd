@@ -129,4 +129,33 @@ Analysis of Violinplot: 2008, 2009, 2010 had the three most snowfall(mm) all ove
 
 
 
+### Plotly Barplot
+```{r}
+noaa_dfc %>%
+  filter(snow > 0,
+         year == 1997) %>%
+  mutate(month = 
+           fct_reorder(month, snow)) %>%
+  group_by(month) %>%
+  summarize(mean_snow 
+            = mean(snow))  %>%
+  plot_ly(x = ~ month, 
+          y = ~ mean_snow, 
+          color = ~ month, 
+          colors = "viridis", 
+          type = "bar") %>%
+   layout(title = 
+           "Average Snowfall for Months in 1997",
+         xaxis = 
+           list(title = 
+                  "Month"),
+         yaxis = 
+           list(title = 
+                  "Mean Snowfall (mm)"))
+```
+Analysis of Barplot: Barplot indicates that for specific months in 1997 the snow data was not recorded or there was no snow for those specific months because in our dataset, specific months contained zero for snowfall (mm). 
+
+
+
+
 Click here to return to the [Home](index.html) page.
