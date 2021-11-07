@@ -33,7 +33,7 @@ noaa_dfc =
 
 
 
-Column {data-width=400}
+Column {data-width=500}
 -----------------------------------------------------------------------
 
 ### Chart A
@@ -63,7 +63,7 @@ noaa_dfc %>%
                   "Maximum temperature (ºC) in 1997"))
 ```
 
-Column {data-width=600}
+Column {data-width=500}
 -----------------------------------------------------------------------
 
 ### Chart B
