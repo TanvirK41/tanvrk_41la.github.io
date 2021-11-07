@@ -17,7 +17,7 @@ library(flexdashboard)
 
 
 ```{r message = FALSE, echo = FALSE}
-set.seed(12345) #set fixed random samples
+set.seed(12345)
 
 noaa_dfc = 
   ny_noaa %>%

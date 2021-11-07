@@ -153,7 +153,7 @@ noaa_dfc %>%
            list(title = 
                   "Mean Snowfall (mm)"))
 ```
-Analysis of Barplot: Barplot indicates that for specific months in 1997 the snow data was not recorded or there was no snow for those specific months because in our dataset, specific months contained zero for snowfall (mm). 
+Analysis of Barplot: Barplot shows that for specific months in 1997 the snowfall (mm) data was not recorded or there was no snowfall (mm) for those specific months because in the dataset that was provided, specific months contained zero for snowfall (mm). 
 
 
 
